@@ -1,0 +1,100 @@
+CODING STRUCTURE
+rows = 65
+cols = 100
+
+cy, cx = 20, 50
+ry, rx = 17, 26
+
+for i in range(rows):
+    for j in range(cols):
+        
+        eq = ((i-cy)**2)/(ry**2) + ((j-cx)**2)/(rx**2)
+
+        # ---------- OVAL FACE ----------
+        if 0.92 <= eq <= 1.08:
+            print("*", end="")
+
+        # ---------- HAIR ----------
+        elif 5 <= i <= 11 and 28 <= j <= 72 and eq <= 1:
+            print("*", end="")
+
+        # ---------- EARS ----------
+        elif ((i-20)**2)/18 + ((j-20)**2)/6 <= 1:
+            print("*", end="")
+        elif ((i-20)**2)/18 + ((j-80)**2)/6 <= 1:
+            print("*", end="")
+
+        # ---------- EYEBROWS ----------
+        elif i == 13 and 36 <= j <= 43:
+            print("*", end="")
+        elif i == 13 and 57 <= j <= 64:
+            print("*", end="")
+
+        # ---------- EYES ----------
+        elif 15 <= i <= 17 and 38 <= j <= 42:
+            print("*", end="")
+        elif 15 <= i <= 17 and 58 <= j <= 62:
+            print("*", end="")
+
+        # pupils
+        elif i == 16 and j == 40:
+            print("*", end="")
+        elif i == 16 and j == 60:
+            print("*", end="")
+
+        # ---------- CHEEKS ----------
+        elif ((i-23)**2)/14 + ((j-38)**2)/12 <= 1:
+            print("*", end="")
+        elif ((i-23)**2)/14 + ((j-62)**2)/12 <= 1:
+            print("*", end="")
+
+        # ---------- NOSE ----------
+        elif 18 <= i <= 25 and j == 50:
+            print("*", end="")
+        elif i == 25 and 47 <= j <= 53:
+            print("*", end="")
+
+        # ---------- SMILE ----------
+        elif i == 28 and 38 <= j <= 62:
+            print("*", end="")
+        elif i == 29 and 41 <= j <= 59:
+            print("*", end="")
+
+        # ---------- TEETH ----------
+        elif 30 <= i <= 31 and 41 <= j <= 59:
+            if i in (30, 31):
+                print("*", end="")
+            elif j in (45, 50, 55):
+                print("*", end="")
+            else:
+                print(" ", end="")
+
+        # ---------- NECK ----------
+        elif 32 <= i <= 38 and 46 <= j <= 54:
+            print("*", end="")
+
+        # ---------- COLLAR ----------
+        elif (32 <= i <= 37 and 38 <= j <= 46) or (32 <= i <= 37 and 54 <= j <= 62):
+            print("*", end="")
+
+        # ---------- TIE ----------
+        elif (38 <= i <= 50 and 48 <= j <= 52):
+            print("*", end="")
+        elif (50 <= i <= 54 and 42 <= j <= 58):
+            print("*", end="")
+
+        # ---------- SHOULDERS ----------
+        elif 37 <= i <= 46 and 22 <= j <= 78:
+            print("*", end="")
+
+        # ---------- CHEST / BODY ----------
+        elif 46 <= i <= 58 and 28 <= j <= 72:
+            print("*", end="")
+
+        # ---------- WAIST SHAPE ----------
+        elif 58 <= i <= 62 and 35 <= j <= 65:
+            print("*", end="")
+
+        else:
+            print(" ", end="")
+    print()
